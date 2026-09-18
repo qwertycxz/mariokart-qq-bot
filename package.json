@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schemastore.org/package",
+	"author": "qwerty吃小庄",
+	"bugs": "https://github.com/qwertycxz/mariokart-qq-bot/issues",
+	"dependencies": {
+		"@tencent-connect/qqbot-nodejs": "^1.0.4",
+		"zod": "^4.6.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.14",
+		"@types/node": "^26.6.1",
+		"prettier": "^3.9.8"
+	},
+	"funding": "https://ko-fi.com/qwertycxz",
+	"license": "Apache-2.0",
+	"name": "马车 Bot",
+	"prettier": {
+		"arrowParens": "avoid",
+		"jsxSingleQuote": true,
+		"overrides": [
+			{
+				"files": "*.yml",
+				"options": {
+					"tabWidth": 2
+				}
+			}
+		],
+		"printWidth": 256,
+		"proseWrap": "never",
+		"quoteProps": "consistent",
+		"semi": false,
+		"singleQuote": true,
+		"tabWidth": 4,
+		"useTabs": true
+	},
+	"repository": "https://github.com/qwertycxz/mariokart-qq-bot",
+	"scripts": {
+		"dev": "node --watch src/index.ts",
+		"format": "prettier -w .",
+		"format:check": "prettier -c .",
+		"lint": "biome check",
+		"lint:fix": "biome check --fix --unsafe",
+		"start": "node --env-file .env src/index.ts"
+	}
+}

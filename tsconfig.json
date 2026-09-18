@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemastore.org/tsconfig",
+	"compilerOptions": {
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"exactOptionalPropertyTypes": true,
+		"noEmit": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"types": ["node"]
+	}
+}
