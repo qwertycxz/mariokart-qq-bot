@@ -9,7 +9,8 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.14",
 		"@types/node": "^26.6.1",
-		"prettier": "^3.9.8"
+		"prettier": "^3.9.8",
+		"typescript": "^7.0.2"
 	},
 	"funding": "https://ko-fi.com/qwertycxz",
 	"license": "Apache-2.0",
@@ -35,11 +36,12 @@
 	},
 	"repository": "https://github.com/qwertycxz/mariokart-qq-bot",
 	"scripts": {
-		"dev": "node --watch src/index.ts",
+		"dev": "node --env-file .env --experimental-import-text --watch src/index.ts",
 		"format": "prettier -w .",
 		"format:check": "prettier -c .",
 		"lint": "biome check",
 		"lint:fix": "biome check --fix --unsafe",
-		"start": "node --env-file .env src/index.ts"
+		"start": "node --env-file .env --experimental-import-text src/index.ts",
+		"typecheck": "tsc"
 	}
 }

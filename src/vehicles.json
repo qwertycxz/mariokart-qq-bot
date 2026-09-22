@@ -1,0 +1,242 @@
+[
+	{
+		"chinese": "标准车",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%A0%87%E5%87%86%E8%BD%A6.png",
+		"weight": 270
+	},
+	{
+		"chinese": "标准型摩托车",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%A0%87%E5%87%86%E5%9E%8B%E6%91%A9%E6%89%98%E8%BD%A6.png",
+		"weight": 270
+	},
+	{
+		"chinese": "彩色小型摩托车",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E5%BD%A9%E8%89%B2%E5%B0%8F%E5%9E%8B%E6%91%A9%E6%89%98%E8%BD%A6.png",
+		"weight": 270
+	},
+	{
+		"chinese": "超级飞毯",
+		"height": 183,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E8%B6%85%E7%BA%A7%E9%A3%9E%E6%AF%AF.png",
+		"weight": 279
+	},
+	{
+		"chinese": "大布鲁",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E5%A4%A7%E5%B8%83%E9%B2%81.png",
+		"weight": 270
+	},
+	{
+		"chinese": "电影巨星",
+		"height": 186,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E7%94%B5%E5%BD%B1%E5%B7%A8%E6%98%9F.png",
+		"weight": 259
+	},
+	{
+		"chinese": "飞行瓢瓢",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E9%A3%9E%E8%A1%8C%E7%93%A2%E7%93%A2.png",
+		"weight": 270
+	},
+	{
+		"chinese": "古典缎带",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E5%8F%A4%E5%85%B8%E7%BC%8E%E5%B8%A6.png",
+		"weight": 270
+	},
+	{
+		"chinese": "管架车",
+		"height": 185,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E7%AE%A1%E6%9E%B6%E8%BD%A6.png",
+		"weight": 257
+	},
+	{
+		"chinese": "海龙王浪潮",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%B5%B7%E9%BE%99%E7%8E%8B%E6%B5%AA%E6%BD%AE.png",
+		"weight": 270
+	},
+	{
+		"chinese": "海豚摩托车",
+		"height": 184,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%B5%B7%E8%B1%9A%E6%91%A9%E6%89%98%E8%BD%A6.png",
+		"weight": 259
+	},
+	{
+		"chinese": "皇家疾速",
+		"height": 186,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E7%9A%87%E5%AE%B6%E7%96%BE%E9%80%9F.png",
+		"weight": 259
+	},
+	{
+		"chinese": "火爆拉力车",
+		"height": 181,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E7%81%AB%E7%88%86%E6%8B%89%E5%8A%9B%E8%BD%A6.png",
+		"weight": 260
+	},
+	{
+		"chinese": "火箭喷射",
+		"height": 186,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E7%81%AB%E7%AE%AD%E5%96%B7%E5%B0%84.png",
+		"weight": 271
+	},
+	{
+		"chinese": "火焰机动雪橇",
+		"height": 188,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E7%81%AB%E7%84%B0%E6%9C%BA%E5%8A%A8%E9%9B%AA%E6%A9%87.png",
+		"weight": 260
+	},
+	{
+		"chinese": "火焰战马",
+		"height": 184,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E7%81%AB%E7%84%B0%E6%88%98%E9%A9%AC.png",
+		"weight": 258
+	},
+	{
+		"chinese": "机器酷霸",
+		"height": 188,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%9C%BA%E5%99%A8%E9%85%B7%E9%9C%B8.png",
+		"weight": 259
+	},
+	{
+		"chinese": "酷霸越野车",
+		"height": 186,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E9%85%B7%E9%9C%B8%E8%B6%8A%E9%87%8E%E8%BD%A6.png",
+		"weight": 260
+	},
+	{
+		"chinese": "拉力车",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%8B%89%E5%8A%9B%E8%BD%A6.png",
+		"weight": 270
+	},
+	{
+		"chinese": "拉力短吻鳄",
+		"height": 187,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%8B%89%E5%8A%9B%E7%9F%AD%E5%90%BB%E9%B3%84.png",
+		"weight": 257
+	},
+	{
+		"chinese": "拉力摩托车",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%8B%89%E5%8A%9B%E6%91%A9%E6%89%98%E8%BD%A6.png",
+		"weight": 270
+	},
+	{
+		"chinese": "鲤鱼旗",
+		"height": 182,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E9%B2%A4%E9%B1%BC%E6%97%97.png",
+		"weight": 257
+	},
+	{
+		"chinese": "龙虾",
+		"height": 196,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E9%BE%99%E8%99%BE.png",
+		"weight": 270
+	},
+	{
+		"chinese": "履带三轮摩托车",
+		"height": 187,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E5%B1%A5%E5%B8%A6%E4%B8%89%E8%BD%AE%E6%91%A9%E6%89%98%E8%BD%A6.png",
+		"weight": 258
+	},
+	{
+		"chinese": "炮弹刺客头",
+		"height": 183,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E7%82%AE%E5%BC%B9%E5%88%BA%E5%AE%A2%E5%A4%B4.png",
+		"weight": 258
+	},
+	{
+		"chinese": "收音机轻型车",
+		"height": 186,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%94%B6%E9%9F%B3%E6%9C%BA%E8%BD%BB%E5%9E%8B%E8%BD%A6.png",
+		"weight": 258
+	},
+	{
+		"chinese": "水管摩托车",
+		"height": 197,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%B0%B4%E7%AE%A1%E6%91%A9%E6%89%98%E8%BD%A6.png",
+		"weight": 271
+	},
+	{
+		"chinese": "探险货运",
+		"height": 183,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%8E%A2%E9%99%A9%E8%B4%A7%E8%BF%90.png",
+		"weight": 260
+	},
+	{
+		"chinese": "蛙蛙车",
+		"height": 190,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E8%9B%99%E8%9B%99%E8%BD%A6.png",
+		"weight": 260
+	},
+	{
+		"chinese": "玩具工程车",
+		"height": 187,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E7%8E%A9%E5%85%B7%E5%B7%A5%E7%A8%8B%E8%BD%A6.png",
+		"weight": 266
+	},
+	{
+		"chinese": "乌龟越野车",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E4%B9%8C%E9%BE%9F%E8%B6%8A%E9%87%8E%E8%BD%A6.png",
+		"weight": 270
+	},
+	{
+		"chinese": "小鱿鱿",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E5%B0%8F%E9%B1%BF%E9%B1%BF.png",
+		"weight": 270
+	},
+	{
+		"chinese": "星星机动雪橇",
+		"height": 185,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E6%98%9F%E6%98%9F%E6%9C%BA%E5%8A%A8%E9%9B%AA%E6%A9%87.png",
+		"weight": 260
+	},
+	{
+		"chinese": "音速女王",
+		"height": 186,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E9%9F%B3%E9%80%9F%E5%A5%B3%E7%8E%8B.png",
+		"weight": 260
+	},
+	{
+		"chinese": "音速赛车",
+		"height": 200,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E9%9F%B3%E9%80%9F%E8%B5%9B%E8%BD%A6.png",
+		"weight": 270
+	},
+	{
+		"chinese": "蒸汽摩托车",
+		"height": 187,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%E8%92%B8%E6%B1%BD%E6%91%A9%E6%89%98%E8%BD%A6.png",
+		"weight": 258
+	},
+	{
+		"chinese": "B冲刺",
+		"height": 190,
+		"url": "https://mariokart.qwertycxz.top/vehicles/B%E5%86%B2%E5%88%BA.png",
+		"weight": 259
+	},
+	{
+		"chinese": "FC机器人摩托车",
+		"height": 183,
+		"url": "https://mariokart.qwertycxz.top/vehicles/FC%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%91%A9%E6%89%98%E8%BD%A6.png",
+		"weight": 256
+	},
+	{
+		"chinese": "Ｈ₂Ｏ",
+		"height": 194,
+		"url": "https://mariokart.qwertycxz.top/vehicles/%EF%BC%A8%E2%82%82%EF%BC%AF.png",
+		"weight": 271
+	},
+	{
+		"chinese": "W巡航车",
+		"height": 188,
+		"url": "https://mariokart.qwertycxz.top/vehicles/W%E5%B7%A1%E8%88%AA%E8%BD%A6.png",
+		"weight": 259
+	}
+]

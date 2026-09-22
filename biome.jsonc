@@ -149,7 +149,6 @@
 				"useConsistentObjectDefinitions": "warn",
 				"useConsistentTypeDefinitions": "warn",
 				"useDefaultParameterLast": "warn",
-				"useDestructuring": "warn",
 				"useErrorCause": "warn",
 				"useForOf": "warn",
 				"useGlobalThis": "warn",
@@ -190,7 +189,7 @@
 				"noThenProperty": "off",
 				"noUnassignedVariables": "warn",
 				"noUndeclaredEnvVars": "off",
-				"noUnnecessaryConditions": "warn",
+				// "noUnnecessaryConditions": "warn", 有 Bug……
 				"noUnusedExpressions": "warn",
 				"useAwait": "warn",
 				"useErrorMessage": "warn",
