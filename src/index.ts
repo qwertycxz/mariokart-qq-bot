@@ -1,4 +1,4 @@
-import { type ChatScope, QQBot, type SendMessageOptions } from '@tencent-connect/qqbot-nodejs'
+import { QQBot, type ReplyTarget, type SendMessageOptions } from '@tencent-connect/qqbot-nodejs'
 import { format } from 'util'
 import { z } from 'zod'
 import ASSIGN_MARKDOWN from './assign.md' with { type: 'text' }
@@ -13,7 +13,7 @@ const TEAM_NAMES = ['红', '蓝', '黄', '绿']
 const VOTE_TIME = 60000
 
 function logTimestamp(...data: unknown[]) {
-	console.log(`[${new Date().toISOString()}]`, ...data)
+	console.log(`[${new Date().toLocaleString()}]`, ...data)
 }
 
 function shuffleEntities(...candidate_pool: typeof CHARACTERS_JSON & typeof VEHICLES_JSON) {
@@ -35,10 +35,6 @@ interface TeamData {
 }
 
 let current_state: 'IDLE' | 'ASSIGNING' = 'IDLE'
-let event_id = ''
-let message_id = ''
-let event_time = new Date(0)
-let message_time = new Date()
 let character_pool = CHARACTERS_JSON.slice(TEAM_NAMES.length)
 let vehicle_pool = VEHICLES_JSON.slice(TEAM_NAMES.length)
 let vote_timeout: NodeJS.Timeout | undefined
@@ -63,27 +59,14 @@ const QQ_BOT = new QQBot({
 	markdownSupport: true,
 })
 
-async function handleAssign(scope: ChatScope, target: string, teams: TeamData[], message = '') {
+async function handleAssign(target: ReplyTarget, teams: TeamData[], message = '') {
 	for (const team of TEAM_DATA) {
 		for (const member of Object.values(team.members)) {
 			member.clear()
 		}
 	}
 
-	const send: SendMessageOptions = {
-		target: {
-			scope,
-			targetId: target,
-		},
-	}
-
-	if (event_time < message_time) {
-		send.target.msgId = message_id
-	} else {
-		send.extra = {
-			event_id,
-		}
-	}
+	const send: SendMessageOptions = { target }
 
 	if (teams.length) {
 		character_pool = shuffleEntities(...teams.map(({ character }) => character), ...character_pool)
@@ -173,8 +156,10 @@ async function handleAssign(scope: ChatScope, target: string, teams: TeamData[],
 				}
 
 				return handleAssign(
-					scope,
-					target,
+					{
+						scope: target.scope,
+						targetId: target.targetId,
+					},
 					TEAM_DATA.filter((_, i) => reassign[i]),
 					log,
 				)
@@ -202,6 +187,7 @@ async function handleAssign(scope: ChatScope, target: string, teams: TeamData[],
 	if (!send.keyboard) {
 		current_state = 'IDLE'
 	}
+	logTimestamp(TEAM_DATA.map(({ character, vehicle }, i) => `${TEAM_NAMES[i]}队：${character.chinese} + ${vehicle.chinese}`).join('；'))
 }
 
 QQ_BOT.on(
@@ -216,11 +202,8 @@ QQ_BOT.on(
 			id,
 		},
 	) => {
-		event_id = id
-		event_time = new Date()
-
 		if (group_member_openid && button_data && TEAM_NAMES.includes(button_data)) {
-			logTimestamp(`${group_member_openid}：${button_data}`)
+			logTimestamp(`${group_member_openid}：投票给${button_data}`)
 			for (const { members } of TEAM_DATA) {
 				if (group_member_openid in members) {
 					members[group_member_openid].add(TEAM_NAMES.indexOf(button_data))
@@ -241,11 +224,6 @@ const OWNER_SCHEMA = z.object({
 })
 
 QQ_BOT.on('message', async (_, { content, mentions, raw: { author }, replyTarget }) => {
-	if (replyTarget.msgId) {
-		message_id = replyTarget.msgId
-		message_time = new Date()
-	}
-
 	OWNER_SCHEMA.parse(author)
 	const command = COMMAND_REGEX.exec(content)?.[1].split(SPACE_REGEX)
 	if (!command) return
@@ -260,7 +238,7 @@ QQ_BOT.on('message', async (_, { content, mentions, raw: { author }, replyTarget
 				for (const team of TEAM_DATA) {
 					team.reassign = INITIAL_REASSIGN
 				}
-				return handleAssign(replyTarget.scope, replyTarget.targetId, TEAM_DATA)
+				return handleAssign(replyTarget, TEAM_DATA)
 			case '分':
 				try {
 					for (const [j, credit] of CREDIT_SCHEMA.parse(command.slice(1)).entries()) {
@@ -288,7 +266,7 @@ QQ_BOT.on('message', async (_, { content, mentions, raw: { author }, replyTarget
 		}
 	}
 
-	logTimestamp(`${command[0]}：${Object.keys(TEAM_DATA[i].members)}`)
+	logTimestamp(`${command[0]}队：${Object.keys(TEAM_DATA[i].members).join('、')}`)
 	await QQ_BOT.sendMarkdown(
 		replyTarget,
 		`${command[0]}队：${Object.keys(TEAM_DATA[i].members)
