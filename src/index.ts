@@ -12,6 +12,10 @@ const REASSIGN_COST = [15, 10, 5, 3]
 const TEAM_NAMES = ['红', '蓝', '黄', '绿']
 const VOTE_TIME = 60000
 
+function logTimestamp(...data: unknown[]) {
+	console.log(`[${new Date().toISOString()}]`, ...data)
+}
+
 function shuffleEntities(...candidate_pool: typeof CHARACTERS_JSON & typeof VEHICLES_JSON) {
 	for (let i = candidate_pool.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1))
@@ -115,15 +119,15 @@ async function handleAssign(scope: ChatScope, target: string, teams: TeamData[],
 								buttons: TEAM_NAMES.map(name => ({
 									action: {
 										data: name,
+										modal: {
+											content: `重抽${name}队吗？投票不可撤销！`,
+										},
 										permission: {
 											type: 2,
 										},
 										type: 1,
 									},
 									id: name,
-									modal: {
-										content: `重抽${name}队吗？投票不可撤销！`,
-									},
 									render_data: {
 										label: `☐ ${name}队`,
 										style: 0,
@@ -216,7 +220,7 @@ QQ_BOT.on(
 		event_time = new Date()
 
 		if (group_member_openid && button_data && TEAM_NAMES.includes(button_data)) {
-			console.log(`${group_member_openid}→${button_data}`)
+			logTimestamp(`${group_member_openid}：${button_data}`)
 			for (const { members } of TEAM_DATA) {
 				if (group_member_openid in members) {
 					members[group_member_openid].add(TEAM_NAMES.indexOf(button_data))
@@ -262,8 +266,9 @@ QQ_BOT.on('message', async (_, { content, mentions, raw: { author }, replyTarget
 					for (const [j, credit] of CREDIT_SCHEMA.parse(command.slice(1)).entries()) {
 						TEAM_DATA[j].credit += credit
 					}
-				} catch {}
-				await QQ_BOT.sendMarkdown(replyTarget, TEAM_DATA.map(({ credit }, j) => `${TEAM_NAMES[j]}队：${credit}`).join('\n'))
+				} finally {
+					await QQ_BOT.sendMarkdown(replyTarget, TEAM_DATA.map(({ credit }, j) => `${TEAM_NAMES[j]}队：${credit}`).join('\n'))
+				}
 		}
 		return
 	}
@@ -283,7 +288,7 @@ QQ_BOT.on('message', async (_, { content, mentions, raw: { author }, replyTarget
 		}
 	}
 
-	console.log(`${command[0]}队：${Object.keys(TEAM_DATA[i].members)}`)
+	logTimestamp(`${command[0]}：${Object.keys(TEAM_DATA[i].members)}`)
 	await QQ_BOT.sendMarkdown(
 		replyTarget,
 		`${command[0]}队：${Object.keys(TEAM_DATA[i].members)
